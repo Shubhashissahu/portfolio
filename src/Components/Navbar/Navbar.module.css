@@ -1,0 +1,117 @@
+@import "../../vars.css";
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+  z-index: 1000;
+  background-color: var(--color-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.title {
+  font-size: 40px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.title:hover {
+  transform: scale(1.1);
+  letter-spacing: 3px;
+}
+
+.menu {
+  display: flex;
+}
+
+.menuBtn {
+  display: none; /* hide on desktop */
+}
+
+.menuItems {
+  display: flex;
+  gap: 47px;
+  list-style: none;
+}
+
+.menuItems a {
+  font-size: 25px;
+  color: var(--color-text);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menuItems a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.menuItems a:hover {
+  color: var(--color-primary);
+}
+
+.menuItems a:hover::after {
+  width: 100%;
+}
+
+
+@media screen and (max-width: 830px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    position: absolute;
+    right: 0;
+    margin-right: 10%;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 11px;
+    z-index: 3;
+  }
+
+  .menuBtn {
+    display: block; /* show menu button on mobile */
+    cursor: pointer;
+  }
+
+  .menuItems {
+  max-height: 0;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+  border-radius: 10px;
+  background: linear-gradient(
+    0deg,
+    rgba(25, 55, 109, 0.2) 0%,
+    rgba(25, 55, 109, 1) 100%
+  );
+  padding: 0 33px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  transition: max-height 0.3s ease-in-out;
+}
+
+.menuOpen {
+  max-height: 500px; /* enough to fit all items */
+  padding: 24px 33px;
+}
+}

@@ -1,0 +1,267 @@
+
+@import "../../vars.css";
+
+.container {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 5rem 1.5rem;
+  font-family: var(--font-roboto);
+}
+
+.maxWidth {
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+.highlight {
+  color: var(--color-primary);
+}
+
+.subtitle {
+  color: #9ca3af;
+  font-size: 1.125rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formContainer {
+  grid-column: 1 / 3;
+}
+
+@media (max-width: 1024px) {
+  .formContainer {
+    grid-column: 1;
+  }
+}
+
+.card {
+  background: linear-gradient(to bottom right, var(--color-secondary), var(--color-dark));
+  border: 1px solid var(--color-secondary);
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: var(--color-text);
+}
+
+.formGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .inputRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.required {
+  color: #ef4444;
+}
+
+.input {
+  background-color: var(--color-dark);
+  border: 1px solid var(--color-secondary);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  font-family: var(--font-roboto);
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(87, 108, 188, 0.1);
+}
+
+.textarea {
+  background-color: var(--color-dark);
+  border: 1px solid var(--color-secondary);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--color-text);
+  font-size: 1rem;
+  resize: none;
+  font-family: var(--font-roboto);
+  transition: all 0.2s ease;
+}
+
+.textarea::placeholder {
+  color: #9ca3af;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(87, 108, 188, 0.1);
+}
+
+.submitBtn {
+  width: 100%;
+  background: linear-gradient(to right, var(--color-primary), #6b7dce);
+  color: var(--color-text);
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-roboto);
+}
+
+.submitBtn:hover {
+  background: linear-gradient(to right, #4a5aa8, var(--color-primary));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(87, 108, 188, 0.3);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactItem {
+  display: flex;
+  gap: 1rem;
+}
+
+.iconWrapper {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.emailIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-primary);
+}
+
+.locationIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ef4444;
+}
+
+.contactLabel {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.contactLink {
+  color: var(--color-text);
+  font-weight: 500;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.contactLink:hover {
+  color: var(--color-primary);
+}
+
+.contactText {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-dark);
+  border: 1px solid var(--color-secondary);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.socialLink:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-primary);
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(87, 108, 188, 0.2);
+}
+
+.socialIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-text);
+}
