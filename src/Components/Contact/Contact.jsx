@@ -166,9 +166,7 @@ export const Contact = () => {
                 <a href="#" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
                   <Instagram className={styles.socialIcon} />
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                  <Zap className={styles.socialIcon} />
-                </a>
+                
               </div>
             </div>
           </div>
