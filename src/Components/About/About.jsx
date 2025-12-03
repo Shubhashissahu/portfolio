@@ -1,49 +1,73 @@
 import React from "react";
-import aboutimg from "../../assets/about/aboutImage.png";
-import cursor from "../../assets/about/cursorIcon.png";
-import server from "../../assets/about/serverIcon.png";
-import uicon from "../../assets/about/uiIcon.png";
-
+import { FaBrain, FaCode, FaRocket, FaStar } from "react-icons/fa";
 import styles from "./About.module.css";
 
 export const About = () => {
   return (
     <section className={styles.container} id="About">
-      <h2 className={styles.title}>About</h2>
+      
+      {/* Heading */}
+      <h2 className={styles.heading}>
+        About <span>Me</span>
+      </h2>
 
-      <div className={styles.content}>
-        <img
-          src={aboutimg}
-          alt="about"
-          className={styles.aboutimage}
-        />
+      <div className={styles.wrapper}>
+        
+        {/* ==========================
+             LEFT SIDE — TEXT
+        ========================== */}
+        <div className={styles.textBox}>
+          <p>
+            I am a passionate <span>B.Tech Computer Science</span> student with a strong 
+            interest in full-stack development, programming, and building smart digital 
+            solutions that solve real-world problems.
+          </p>
 
-        <ul className={styles.aboutitems}>
-          <li className={styles.aboutitem}>
-            <img src={cursor} alt="cursor icon" />
-            <div>
-              <h3>Frontend Developer</h3>
-              <p>I'm a frontend developer with experience in building and optimizing sites.</p>
-            </div>
-          </li>
+          <p>
+            As a <span>Web Developer</span>, I enjoy creating modern, responsive, and 
+            visually appealing user interfaces using React, CSS modules, and optimized 
+            frontend architectures.
+          </p>
 
-          <li className={styles.aboutitem}>
-            <img src={server} alt="server icon" />
-            <div>
-              <h3>Backend Developer</h3>
-              <p>I have experience designing scalable APIs and server-side applications.</p>
-            </div>
-          </li>
+          <p>
+            As a <span>Programmer</span>, I focus on writing clean, efficient, and 
+            scalable code while continuously learning new technologies and improving 
+            my problem-solving abilities.
+          </p>
+        </div>
 
-          <li className={styles.aboutitem}>
-            <img src={uicon} alt="UI icon" />
-            <div>
-            <h3>UI Designer</h3>
-            <p>I design clean and intuitive user interfaces with attention to detail.</p>
-            </div>
-        </li>
-        </ul>
-    </div>
+        {/* ==========================
+             RIGHT SIDE — 4 CARDS
+        ========================== */}
+        <div className={styles.cards}>
+          
+          <div className={styles.card}>
+            <div className={styles.icon}><FaBrain /></div>
+            <h3>Analytical Thinker</h3>
+            <p>Strong logical and problem-solving mindset.</p>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.icon}><FaCode /></div>
+            <h3>Web Development</h3>
+            <p>Skilled in building responsive and modern web applications.</p>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.icon}><FaRocket /></div>
+            <h3>Fast Learner</h3>
+            <p>Always exploring new tech and improving skills continuously.</p>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.icon}><FaStar /></div>
+            <h3>Quality Focused</h3>
+            <p>Dedicated to writing efficient, clean, and scalable code.</p>
+          </div>
+
+        </div>
+
+      </div>
     </section>
   );
 };
