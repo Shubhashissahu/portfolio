@@ -1,46 +1,35 @@
-import React from "react";
 import { FaBrain, FaCode, FaRocket, FaStar } from "react-icons/fa";
 import styles from "./About.module.css";
 
-export const About = () => {
+const About = () => {
   return (
     <section className={styles.container} id="About">
-      
-      {/* Heading */}
       <h2 className={styles.heading}>
         About <span>Me</span>
       </h2>
 
       <div className={styles.wrapper}>
-        
-        {/* ==========================
-             LEFT SIDE — TEXT
-        ========================== */}
         <div className={styles.textBox}>
           <p>
-            I am a passionate <span>B.Tech Computer Science</span> student with a strong 
-            interest in full-stack development, programming, and building smart digital 
+            I am a passionate <span>B.Tech Computer Science</span> student with a strong
+            interest in full-stack development, programming, and building smart digital
             solutions that solve real-world problems.
           </p>
 
           <p>
-            As a <span>Web Developer</span>, I enjoy creating modern, responsive, and 
-            visually appealing user interfaces using React, CSS modules, and optimized 
+            As a <span>Web Developer</span>, I enjoy creating modern, responsive, and
+            visually appealing user interfaces using React, CSS modules, and optimized
             frontend architectures.
           </p>
 
           <p>
-            As a <span>Programmer</span>, I focus on writing clean, efficient, and 
-            scalable code while continuously learning new technologies and improving 
+            As a <span>Programmer</span>, I focus on writing clean, efficient, and
+            scalable code while continuously learning new technologies and improving
             my problem-solving abilities.
           </p>
         </div>
 
-        {/* ==========================
-             RIGHT SIDE — 4 CARDS
-        ========================== */}
         <div className={styles.cards}>
-          
           <div className={styles.card}>
             <div className={styles.icon}><FaBrain /></div>
             <h3>Analytical Thinker</h3>
@@ -64,10 +53,10 @@ export const About = () => {
             <h3>Quality Focused</h3>
             <p>Dedicated to writing efficient, clean, and scalable code.</p>
           </div>
-
         </div>
-
       </div>
     </section>
   );
 };
+
+export default About;

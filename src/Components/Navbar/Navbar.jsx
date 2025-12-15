@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Navbar.module.css";
 
-// Correct image imports for React (CRA/Vite)
+// Assets
 import closeIcon from "../../assets/nav/closeIcon.png";
 import menuIcon from "../../assets/nav/menuIcon.png";
 
@@ -18,8 +18,9 @@ const Navbar = () => {
         <img
           className={styles.menuBtn}
           src={menuOpen ? closeIcon : menuIcon}
-          alt="menu-button"
+          alt="Menu toggle"
           onClick={() => setMenuOpen((prev) => !prev)}
+          loading="eager"
         />
 
         <ul

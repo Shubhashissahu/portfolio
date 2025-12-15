@@ -1,7 +1,6 @@
-import React from "react";
 import styles from "./Footer.module.css";
 
-export const Footer = () => {
+const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
@@ -17,6 +16,7 @@ export const Footer = () => {
             © {currentYear} All rights reserved.
           </p>
         </div>
+
         <button onClick={scrollToTop} className={styles.backToTop}>
           Back to Top <span>↑</span>
         </button>
@@ -25,3 +25,4 @@ export const Footer = () => {
   );
 };
 
+export default Footer;

@@ -1,27 +1,41 @@
-import React, { useState } from 'react';
-import { Mail, MapPin, Github, Linkedin, Twitter, Instagram, Zap } from 'lucide-react';
-import styles from './Contact.module.css';
+import { useState } from "react";
+import {
+  Mail,
+  MapPin,
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+} from "lucide-react";
+import styles from "./Contact.module.css";
 
-export const Contact = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    console.log("Form submitted:", formData);
+
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
   };
 
   return (
@@ -29,23 +43,23 @@ export const Contact = () => {
       <div className={styles.maxWidth}>
         {/* Header */}
         <div className={styles.header}>
-
           <h2 className={styles.title}>
             Get In <span className={styles.highlight}>Touch</span>
           </h2>
-          <p className={styles.subtitle}>Have a project in mind or want to discuss a potential opportunity? Feel free to reach out.</p>
+          <p className={styles.subtitle}>
+            Have a project in mind or want to discuss a potential opportunity?
+            Feel free to reach out.
+          </p>
         </div>
 
-        {/* Main Content Grid */}
+        {/* Main Grid */}
         <div className={styles.grid}>
-          
-          {/* Left Column - Form */}
+          {/* Left: Form */}
           <div className={styles.formContainer}>
             <div className={styles.card}>
               <h2 className={styles.cardTitle}>Send Me a Message</h2>
-              
-              <div className={styles.formGrid}>
-                {/* Name and Email Row */}
+
+              <form className={styles.formGrid} onSubmit={handleSubmit}>
                 <div className={styles.inputRow}>
                   <div className={styles.inputGroup}>
                     <label className={styles.label}>
@@ -58,8 +72,10 @@ export const Contact = () => {
                       onChange={handleChange}
                       placeholder="Your name"
                       className={styles.input}
+                      required
                     />
                   </div>
+
                   <div className={styles.inputGroup}>
                     <label className={styles.label}>
                       Email <span className={styles.required}>*</span>
@@ -71,11 +87,11 @@ export const Contact = () => {
                       onChange={handleChange}
                       placeholder="your.email@example.com"
                       className={styles.input}
+                      required
                     />
                   </div>
                 </div>
 
-                {/* Subject */}
                 <div className={styles.inputGroup}>
                   <label className={styles.label}>
                     Subject <span className={styles.required}>*</span>
@@ -87,10 +103,10 @@ export const Contact = () => {
                     onChange={handleChange}
                     placeholder="How can I help you?"
                     className={styles.input}
+                    required
                   />
                 </div>
 
-                {/* Message */}
                 <div className={styles.inputGroup}>
                   <label className={styles.label}>
                     Message <span className={styles.required}>*</span>
@@ -102,71 +118,79 @@ export const Contact = () => {
                     placeholder="Your message here..."
                     rows="6"
                     className={styles.textarea}
+                    required
                   />
                 </div>
 
-                {/* Submit Button */}
-                <button
-                  onClick={handleSubmit}
-                  className={styles.submitBtn}
-                >
+                <button type="submit" className={styles.submitBtn}>
                   Send Message
                 </button>
-              </div>
+              </form>
             </div>
           </div>
 
-          {/* Right Column */}
+          {/* Right: Info + Social */}
           <div className={styles.rightColumn}>
-            {/* Contact Information */}
             <div className={styles.card}>
               <h2 className={styles.cardTitle}>Contact Information</h2>
-              
+
               <div className={styles.contactList}>
-                {/* Email */}
                 <div className={styles.contactItem}>
                   <div className={styles.iconWrapper}>
-                    <Mail className={styles.emailIcon} />
+                    <Mail />
                   </div>
                   <div>
                     <p className={styles.contactLabel}>Email</p>
-                    <a href="mailto:shubhashissahu261@gmail.com" className={styles.contactLink}>
+                    <a
+                      href="mailto:shubhashissahu261@gmail.com"
+                      className={styles.contactLink}
+                    >
                       shubhashissahu261@gmail.com
                     </a>
                   </div>
                 </div>
 
-                {/* Location */}
                 <div className={styles.contactItem}>
                   <div className={styles.iconWrapper}>
-                    <MapPin className={styles.locationIcon} />
+                    <MapPin />
                   </div>
                   <div>
                     <p className={styles.contactLabel}>Location</p>
-                    <p className={styles.contactText}>Bhubaneswar, In</p>
+                    <p className={styles.contactText}>Bhubaneswar, IN</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Social Links */}
             <div className={styles.card}>
               <h2 className={styles.cardTitle}>Connect With Me</h2>
-              
+
               <div className={styles.socialLinks}>
-                <a href="https://github.com/Shubhashissahu" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                  <Github className={styles.socialIcon} />
+                <a
+                  href="https://github.com/Shubhashissahu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                >
+                  <Github />
                 </a>
-                <a href="www.linkedin.com/in/shubhashis-sahu-2493b2292" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                  <Linkedin className={styles.socialIcon} />
+
+                <a
+                  href="https://www.linkedin.com/in/shubhashis-sahu-2493b2292"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                >
+                  <Linkedin />
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                  <Twitter className={styles.socialIcon} />
+
+                <a href="#" className={styles.socialLink}>
+                  <Twitter />
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                  <Instagram className={styles.socialIcon} />
+
+                <a href="#" className={styles.socialLink}>
+                  <Instagram />
                 </a>
-                
               </div>
             </div>
           </div>
@@ -175,3 +199,5 @@ export const Contact = () => {
     </section>
   );
 };
+
+export default Contact;
