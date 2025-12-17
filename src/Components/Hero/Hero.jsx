@@ -1,30 +1,31 @@
-import heroimg from "../../assets/hero/circle pic.png";
+import heroimg from "../../assets/hero/profile photo.png";
 import styles from "./Hero.module.css";
 
 const Hero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Hi, I’m Shubhashis</h1>
+        <h1 className={styles.title}>
+          Hi, I’m <span>Shubhashis</span>
+        </h1>
 
         <p className={styles.description}>
-          I am a full-stack developer working with React and Node.js.
+          I design and build modern web applications with React and Node.js,
+          focused on performance, clean UI, and real-world solutions.
         </p>
 
-        <a
-          href="mailto:shubhashissahu261@gmail.com"
-          className={styles.contactbtn}
-        >
-          Contact Me
+        <a href="#projects" className={styles.contactbtn}>
+          View Projects
         </a>
       </div>
 
-      <img
-        src={heroimg}
-        alt="Hero"
-        className={styles.heroimg}
-        loading="eager"
-      />
+      <div className={styles.imageWrapper}>
+        <img
+          src={heroimg}
+          alt="Shubhashis profile"
+          className={styles.heroimg}
+        />
+      </div>
 
       <div className={styles.topBlur} />
       <div className={styles.bottomBlur} />

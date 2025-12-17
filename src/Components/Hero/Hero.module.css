@@ -5,111 +5,141 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 49px;
-  z-index: 1;
-  margin-left: 10%;
-  margin-right: 10%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+  min-height: 90vh; /* 🔥 FIX */
 }
+
 .content {
+  max-width: 560px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  color: var(--color-text);
+  gap: 1.5rem;
   z-index: 1;
+  color: var(--color-text); /* 🔥 FIX */
 }
 
-.tittle {
-  font-size: 72px;
-  font-weight: 900;
-  margin-bottom: 33px;
-  font-family: var(--font-roboto);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 70%,
-    rgba(255, 255, 255, 0) 120%
-  );
--webkit-text-fill-color: transparent;   /* Makes text fill invisible */
--webkit-background-clip: text;          /* Clips the gradient to the text shape */
-
+.title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
+
+.title span {
+  background: linear-gradient(90deg, #60a5fa, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .description {
-  font-size: 30px;
-  font-family: var(--font-roboto);
-  margin-bottom: 52px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #cbd5e1;
 }
 
 .contactbtn {
+  align-self: flex-start;
+  margin-top: 1rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #4a90e2, #2563eb);
+  color: white;
   text-decoration: none;
-  background-color: var(--color-primary);
-  color: var(--color-text);
-  border-radius: 100px;
-  font-size: 30px;
-  font-weight: 600;
-  padding: 17px 26px;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
-  
+  transition: all 0.3s ease;
 }
+
 .contactbtn:hover {
-  background: linear-gradient(135deg, #4a90e2, var(--color-primary));
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+}
+.imageWrapper {
+  width: 260px;      
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(59, 130, 246, 0.15);
 }
 
 .heroimg {
   width: 40%;
-  z-index: 1;
-
-  animation-name: floating;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-@keyframes floating {
-  0% {
-    transform: translate(0, 0px);
-  }
-  50% {
-    transform: translate(0, 10px);
-  }
-  100% {
-    transform: translate(0, -0px);
-  }
+  height: 100%;
+  object-fit: cover;   
 }
 
 .topBlur {
   position: absolute;
-  width: 50vw;
-  height: 50vw;
-  min-width: 350px;
-  min-width: 350px;
-  top: -128px;
-  left: -10vw;
-  border-radius: 764px;
-  background: rgba(25, 55, 109, 0.7);
-  filter: blur(100px);
-  z-index: 0;
+  width: 400px;
+  height: 400px;
+  top: -150px;
+  left: -150px;
+  background: rgba(59, 130, 246, 0.25);
+filter: blur(140px);
+
 }
 
 .bottomBlur {
   position: absolute;
-  width: 70vw;
-  height: 50vw;
-  min-width: 350px;
-  min-width: 250px;
-  top: 246px;
-  right: -25vw;
-  border-radius: 764px;
-  background: rgba(25, 55, 109, 0.7);
-  filter: blur(100px);
-  z-index: 0;
+  width: 400px;
+  height: 400px;
+  bottom: -150px;
+  right: -150px;
+  background: rgba(59, 130, 246, 0.35);
+  filter: blur(120px);
 }
 
-@media screen and (max-width: 830px) {
+@media (max-width: 768px) {
   .container {
-    flex-direction: column-reverse;
+    flex-direction: column-reverse; /* 🔥 image first, then text */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    padding: 3.5rem 1.25rem 2.5rem;
+    gap: 2rem;
+  }
+
+  .imageWrapper {
+    width: 170px;      
+    height: 170px;
+    margin-bottom: 0.5rem;
   }
 
   .content {
     align-items: center;
+    gap: 1.2rem;
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 2.1rem; /* 🔥 mobile-friendly */
+    line-height: 1.25;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 320px;
+    color: #cbd5e1;
+  }
+
+  .contactbtn {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.6rem;
+  }
+
+  /* soften background effects on mobile */
+  .topBlur,
+  .bottomBlur {
+    opacity: 0.4;
+    filter: blur(160px);
   }
 }
+
+
