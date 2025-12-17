@@ -1,4 +1,4 @@
-import heroimg from "../../assets/hero/circle pic.png";
+import heroimg from "../../assets/hero/profile photo.png";
 import styles from "./Hero.module.css";
 
 const Hero = () => {
@@ -8,15 +8,18 @@ const Hero = () => {
         <h1 className={styles.title}>Hi, I’m Shubhashis</h1>
 
         <p className={styles.description}>
-          I am a full-stack developer working with React and Node.js.
+          I build fast, scalable web applications with React and Node.js,
+focused on clean UI and real-world problem solving.
+
         </p>
 
         <a
-          href="mailto:shubhashissahu261@gmail.com"
+        
           className={styles.contactbtn}
         >
-          Contact Me
+        View Projects
         </a>
+        
       </div>
 
       <img
